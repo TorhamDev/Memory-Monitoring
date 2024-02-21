@@ -1,18 +1,18 @@
 import sqlalchemy as sa
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import Session
 
 from .db.models import Memory
 from .schema import MemoryStatistics, Statistics
 
 
 class StatisticsController:
-    def __init__(self, db_session: sessionmaker[Session]) -> None:
+    def __init__(self, db_session: Session) -> None:
         self.db_session = db_session
 
     def get(self, rows: int) -> Statistics:
         query = sa.select(Memory).order_by(Memory.id.desc()).limit(rows)
 
-        with self.db_session.begin() as db:
+        with self.db_session as db:
             data = db.scalars(query).all()
             memory_metrics = [
                 MemoryStatistics(

@@ -5,7 +5,7 @@ from src.router import router as mem_router
 from src.utils.constants import TASK_REPEAT_TIME
 from src.utils.repeater import repeat_every
 
-from .db.database import get_db
+from .db.database import GetDB
 from .db.models import Memory
 
 app = FastAPI()
@@ -15,7 +15,7 @@ app = FastAPI()
 @repeat_every(seconds=TASK_REPEAT_TIME)
 async def remove_expired_tokens_task() -> None:
     mem_info = collect_memory_metrics()
-    with get_db().begin() as db:
+    with GetDB() as db:
         memory = Memory(
             date=mem_info.date,
             used=mem_info.used,
