@@ -1,0 +1,64 @@
+{
+  "editor.fontSize": 15,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.defaultFormatter": null,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "git.confirmSync": false,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.tabCompletion": "on",
+    "editor.autoIndent": "advanced",
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "ruff.lint.run": "onSave",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.testing.pytestArgs": ["tests"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#0075d3",
+    "activityBar.background": "#0075d3",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff80c6",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#0075d3",
+    "statusBar.background": "#0059a0",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#0075d3",
+    "statusBarItem.remoteBackground": "#0059a0",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#0059a0",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#0059a099",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "editor.background": "#000000"
+  },
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.editorAssociations": {
+    "*.dump": "default"
+  },
+  // "workbench.iconTheme": "vscode-icons",
+  "peacock.color": "#0059a0",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "tabnine.experimentalAutoImports": true
+}
