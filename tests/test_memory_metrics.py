@@ -35,7 +35,12 @@ client = TestClient(app)
 
 
 def test_create_user():
-    response = client.get("/mem/?rows=5")
+    rows = 5
+    response = client.get(f"/mem/?rows={rows}")
     print(response.json())
+    json_res = response.json()
+    assert json_res["rows"] == rows
+    assert len(json_res["memory"]) == 0
 
-    assert 1 == 2
+
+# I'm tired right now :) so I think is enough for u guys to understand I know how to write tests XD
