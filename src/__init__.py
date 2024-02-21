@@ -1,4 +1,4 @@
-from .database import Base, engine
-from .models import Memory  # noqa
+from .db.database import Base, engine
+from .db.models import Memory  # noqa
 
 Base.metadata.create_all(engine)
