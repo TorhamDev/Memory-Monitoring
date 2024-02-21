@@ -1,8 +1,9 @@
 from fastapi import FastAPI
-from fastapi_utils.tasks import repeat_every
 
 from src.exporter.collectors import collect_memory_metrics
 from src.router import router as mem_router
+from src.utils.constants import TASK_REPEAT_TIME
+from src.utils.repeater import repeat_every
 
 from .db.database import get_db
 from .db.models import Memory
@@ -11,7 +12,7 @@ app = FastAPI()
 
 
 @app.on_event("startup")
-@repeat_every(seconds=2)  # 1 minute
+@repeat_every(seconds=TASK_REPEAT_TIME)
 async def remove_expired_tokens_task() -> None:
     mem_info = collect_memory_metrics()
     with get_db().begin() as db:
